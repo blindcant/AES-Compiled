@@ -6,9 +6,9 @@ Compiled jar files for the database UDF and command line version of the AES CBC 
 4. AES_CBC_Padding_UDF-Encrypt.jar
 5. Teradata_Java_UDF_install.sql
 
-The first file is the CLI version of the program. To run it, go into the command line and type java -jar AES_CBC_Padding-1.4.jar -h to show the program's help. It can do everything from the command line
+The first file is the CLI version of the program. To run it, go into the command line and type `java -jar AES_CBC_Padding-1.4.jar -h` to show the program's help. It can do everything from the command line.
 
-The following 3 files can also be run from the command line using java -jar AES_CBC_Padding_UDF_xxx.jar but this is for demonstration purposes only. They are to be used as Database User Defined Functions. The file ending with Both can do both encryption and decryption, whereas the other 2 do decryption or encryption only. The method signatures for them are decrypt(String inputCiphertextBase64, String inputKey) and encrypt(String inputCiphertextBase64, String inputKey).
+The following 3 files can also be run from the command line using java -jar AES_CBC_Padding_UDF_xxx.jar but this is for demonstration purposes only. They are to be used as Database User Defined Functions. The file ending with Both can do both encryption and decryption, whereas the other 2 do decryption or encryption only. The method signatures for them are decrypt(String inputCiphertextBase64, String inputKey) and encrypt(String inputCiphertextBase64, String inputKey). Just remember that the keys need to be 16, 24, or 32 characters long, which equates to 128, 192, and 256 bit AES respectively. The initialisation vector is automatically created using a cryptographically suitable pseudo random number and it prepended to the output ciphertext.
 
 The final file is the file needed to load the UDFs into Teradata. Here are some notes on what the file does.
 
